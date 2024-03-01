@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            font-family: "sans-serif";
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="text"], select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .checkbox-container {
+            text-align: left;
+            margin: 10px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive Elements Example</h1>
+
+    <button onclick="showAlert()">Click me!</button>
+
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name">
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="Your email">
+
+        <div class="checkbox-container">
+            <label>Interests:</label>
+            <input type="checkbox" id="interest1" name="interest1">
+            <label for="interest1">Interest 1</label>
+
+            <input type="checkbox" id="interest2" name="interest2">
+            <label for="interest2">Interest 2</label>
+        </div>
+
+        <label for="dropdown">Select:</label>
+        <select id="dropdown" name="dropdown">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
+
+        <button type="button" onclick="submitForm()">Submit Form</button>
+    </form>
+
+    <script>
+        function showAlert() {
+            alert("Button clicked!");
+        }
+
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const interest1 = document.getElementById('interest1').checked;
+            const interest2 = document.getElementById('interest2').checked;
+            const dropdownValue = document.getElementById('dropdown').value;
+
+            alert(`Form submitted!\nName: ${name}\nEmail: ${email}\nInterest 1: ${interest1}\nInterest 2: ${interest2}\nDropdown: ${dropdownValue}`);
+        }
+    </script>
+    <hr width="500px">
+    <a href="index.html">Back</a>
+</body>
+</html>
